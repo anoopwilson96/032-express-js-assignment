@@ -4,14 +4,22 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World of books')
 })
 
-// Get all books/author
-// Get book/author by Id
-// Add a new book/author
-// Update book/author details
-// Delete book/author
+// Get all books.
+// Get book by Id.
+// Add a new book.
+// Update book details.
+// Delete a book.
+
+
+
+// Get all authors.
+// Get author by Id.
+// Add a new author.
+// Update author details.
+// Delete author.
 
 
 
