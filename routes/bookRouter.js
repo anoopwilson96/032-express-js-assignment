@@ -1,36 +1,27 @@
 const express = require('express')
+const { getBooks, getBookById, addBook, patchBook, deleteBook } = require('./controllers/bookControllers')
 const router = express.Router()
 
 
 // Get all books.
 
-app.get('/', (req, res) => {
-  res.send('Code for: Get all books')
-})
+router.get('/', getBooks)
 
 // Get book by Id.
 
-app.get('/:bookId', (req, res) => {
-  res.send('Code for: Get book by ID')
-})
+router.get('/:bookId', getBookById)
 
 // Add a new book.
 
-app.post('/:bookId', (req, res) => {
-  res.send('Code for: Add a new book')
-})
+router.post('/:bookId', addBook)
 
 // Update book details.
 
-app.patch('/:bookId', (req, res) => {
-  res.send('Code for: Update book details')
-})
+router.patch('/:bookId', patchBook)
 
 // Delete a book.
 
-app.delete('/:bookId', (req, res) => {
-  res.send('Code for: Delete a book')
-})
+router.delete('/:bookId', deleteBook)
 
 
 
