@@ -9,9 +9,6 @@ const port = 3000
 
 app.use(cors())
 
-app.get('/', (req, res) => {
-  res.send('Hello World of books')
-})
 
 app.use('/books', bookRouter)
 app.use('/authors', authorRouter)
