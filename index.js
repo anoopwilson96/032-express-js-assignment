@@ -3,7 +3,11 @@ const express = require('express')
 const app = express()
 const bookRouter = require ('./routes/bookRouter')
 const authorRouter = require ('./routes/authorRouter')
+const cors = require('cors')
 const port = 3000
+
+
+app.use(cors())
 
 app.get('/', (req, res) => {
   res.send('Hello World of books')
