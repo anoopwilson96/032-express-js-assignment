@@ -1,5 +1,5 @@
 const express = require('express')
-const { getAuthors, getAuthorById, addAuthor, patchAuthor, deleteAuthor } = require('./controllers/authorControllers')
+const { getAuthors, getAuthorById, addAuthor, patchAuthor, deleteAuthor } = require('../controllers/authorControllers')
 const router = express.Router()
 
 // Get all authors.
