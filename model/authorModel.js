@@ -2,7 +2,6 @@ const { default: mongoose } = require("mongoose");
 
 const authorSchema = new mongoose.Schema({
   authorName: String,
-  authorId: Number;
   image: String,
   details: String
 })
