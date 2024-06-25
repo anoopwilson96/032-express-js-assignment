@@ -13,7 +13,7 @@ router.get('/:bookId', getBookById)
 
 // Add a new book.
 
-router.post('/:bookId', addBook)
+router.post('/', addBook)
 
 // Update book details.
 
