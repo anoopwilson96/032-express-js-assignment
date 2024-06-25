@@ -12,7 +12,7 @@ router.get('/:authorId', getAuthorById)
 
 // Add a new author.
 
-router.post('/:authorId', addAuthor)
+router.post('/', addAuthor)
 
 
 // Update author details.
