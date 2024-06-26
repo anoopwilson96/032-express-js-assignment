@@ -4,10 +4,10 @@ const { default: mongoose } = require("mongoose");
 const bookSchema = new mongoose.Schema({
   bookName: String,
   bookAuthor: String,
-  authorId: Number,
+  bookImage: String,
+  authorId: String,
   description: String,
   price: Number
-  
 })
 
 
