@@ -3,6 +3,7 @@ const express = require('express')
 const app = express()
 const bookRouter = require ('./routes/bookRouter')
 const authorRouter = require ('./routes/authorRouter')
+const userRouter = require('./routes/userRouter')
 const cors = require('cors')
 const port = 3000
 
@@ -12,6 +13,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/books', bookRouter)
 app.use('/authors', authorRouter)
+app.use('/users',userRouter)
 
 
 
