@@ -32,8 +32,17 @@ const getUserById = async (req, res) => {
 const addUser = async (req, res) => {
   try {
     const userData = req.body
-    const user =  new User (userData);
-                  await user.save();
+    const hash = bcrypt.hashSync(userData.password, saltRounds); 
+    //above is added from BCRYPT technique 1, and replace myPlainTextPassword with user password
+    // so PlainTextPassword -> req.body.password (now its called hash)
+    // don't give userData anymore, because its non encrypted password
+    //so make new userData 
+   // const user =  new User (userData);
+   const user =  new User ({
+       ...userData,   //...userData indicate data from that is copied
+       password: hash // but password is replaced with encrypted password called hash
+   });
+    await user.save();
     res.status(200).json(user)
   } catch (error) {
     res.status(404).send('Error: Failed to add')
