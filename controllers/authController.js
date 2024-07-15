@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt')
 const cors = require('cors')
 
+// LOGIN INTO WEBSITE
+
 //1. login authentication is a POST request
 
 const login = async (req,res)=>{
@@ -46,6 +48,29 @@ const passwordsMatch = bcrypt.compareSync(password,user.password)
 
 }
 
+
+
+//VERIFY LOGIN ALWAYS
+
+
+//TO CHECK LOGIN ALWAYS(through this code we will create post or get or any request)
+//Every time a request localhost:3000/auth/verify is created and in response this code will check for COOKIES
+//(cookies are send when user logged in along with jWT)
+//and if the cookies is present it shows FE that user is Logged In.
+//but to check cookies we need middleware called "cookieParser"
+const verifyLogin = async (req,res) => {
+  if(req.cookies.loginToken){   //req.cookies is fetched with help of cookiesparser middleware and loginToken is the name of JWT token given
+    res.status(200).send('Logged in')
+  }
+  else{
+    res.status(404).send('Unauthorized access') //if cookies (loginToken) is not found 
+  }
+}
+
+
+
+
 module.exports = {
-  login
+  login,
+  verifyLogin
 }
