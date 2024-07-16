@@ -54,7 +54,7 @@ const passwordsMatch = bcrypt.compareSync(password,user.password)
 
 
 //TO CHECK LOGIN ALWAYS(through this code we will create post or get or any request)
-//Every time a request localhost:3000/auth/verify is created and in response this code will check for COOKIES
+//Every time a request localhost:3000/auth/verify (create routes first) is created and in response this code will check for COOKIES
 //(cookies are send when user logged in along with jWT)
 //and if the cookies is present it shows FE that user is Logged In.
 //but to check cookies we need middleware called "cookieParser"
