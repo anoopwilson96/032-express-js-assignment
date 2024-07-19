@@ -67,10 +67,19 @@ const verifyLogin = async (req,res) => {
   }
 }
 
+// LOGOUT by deleting cookie
+
+const logout = async(req,res)=>{
+  res.clearCookie('loginToken');
+  res.status(200).send('Logged out')
+
+}
+
 
 
 
 module.exports = {
   login,
-  verifyLogin
+  verifyLogin,
+  logout
 }
