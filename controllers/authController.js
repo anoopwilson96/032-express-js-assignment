@@ -36,9 +36,9 @@ const passwordsMatch = bcrypt.compareSync(password,user.password)
  const token = jwt.sign(
   {_id:user._id,email:user.email},
   process.env.JWT_SECRET_KEY,
-  {expiresIn:'1h'});
+  {expiresIn:'1h', SameSite: 'Lax'});
 
-  res.status(200).cookie('loginToken',token,{httpOnly:true}).send('Login Success') //passwordsMatch is TRUE 
+  res.status(200).cookie('loginToken',token,{httpOnly:true, SameSite: 'Lax'}).send('Login Success') //passwordsMatch is TRUE 
 // send back TOKEN as ONLY COOKIE('nameCookie',token,{httpOnly:true})
 // httpOnly:true  is given so that no codes or JS can access the cookie with JWT
  }
