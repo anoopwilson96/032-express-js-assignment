@@ -38,7 +38,7 @@ const passwordsMatch = bcrypt.compareSync(password,user.password)
   process.env.JWT_SECRET_KEY,
   {expiresIn:'1h'});
 
-  res.status(200).cookie('loginToken',token,{httpOnly:true, secure: true,SameSite:'Strict' }).send('Login Success') //passwordsMatch is TRUE 
+  res.status(200).cookie('loginToken',token,{httpOnly:true}).send('Login Success') //passwordsMatch is TRUE 
 // send back TOKEN as ONLY COOKIE('nameCookie',token,{httpOnly:true})
 // httpOnly:true  is given so that no codes or JS can access the cookie with JWT
  }
